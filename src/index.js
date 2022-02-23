@@ -1,12 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
+import "../node_modules/bootstrap/dist/css/bootstrap.css";
+import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
 import App from './App';
+import './index.css';
+import store from './redux/store';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+
+    <BrowserRouter>
+      <Provider store={store}><App /></Provider>
+    </BrowserRouter>
+
+
   </React.StrictMode>,
   document.getElementById('root')
 );
